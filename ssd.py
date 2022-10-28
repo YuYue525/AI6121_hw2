@@ -58,7 +58,7 @@ def sum_of_absolute_difference(left_img, right_img, kernel = 12, max_offset = 20
             
     time_end=time.time()
     
-    print("time cost", time_end - time_start, "s")
+    print("\ntime cost", time_end - time_start, "s")
 
     # Convert to PIL and save it
     # print(depth)
@@ -116,7 +116,7 @@ def sum_of_squares_difference(left_img, right_img, kernel = 12, max_offset = 20,
             
     time_end=time.time()
     
-    print("time cost", time_end - time_start, "s")
+    print("\ntime cost", time_end - time_start, "s")
 
     # Convert to PIL and save it
     # print(depth)
