@@ -7,7 +7,7 @@ from scipy.ndimage import *
 
 result_dir = "./results"
 
-def plane_sweep_ncc(im_l, im_r, start, steps, wid):
+def NCC(im_l, im_r, start, steps, wid):
     # calculating disparity images using Normalized cross-correlation.
     m, n = im_l.shape
     # arrays holding different summation values
@@ -56,7 +56,7 @@ if __name__ == '__main__':
     # ncc width
     wid = 27
 
-    res = plane_sweep_ncc(im_l, im_r, start, steps, wid)
+    res = NCC(im_l, im_r, start, steps, wid)
 
     imsave(os.path.join(result_dir, "NCC_" + result_name + "_patch_" + str(wid) + "_range_" + str(steps) + ".jpg"), res, cmap='gray')
 

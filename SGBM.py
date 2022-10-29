@@ -5,22 +5,7 @@ from matplotlib import pyplot as plt
 
 result_dir = "./results"
 
-if __name__ == '__main__':
-
-    if not os.path.exists(result_dir):
-        os.mkdir(result_dir)
-    
-    '''
-    imgL_path = "triclopsi2l.jpg"
-    imgR_path = "triclopsi2r.jpg"
-    result_name = "SGMB_triclopsi2.png"
-    '''
-    imgL_path = "corridorl.jpg"
-    imgR_path = "corridorr.jpg"
-    result_name = "SGMB_corridor.png"
-    
-    imgL = cv2.imread(imgL_path)
-    imgR = cv2.imread(imgR_path)
+def SGBM(imgL, imgR, result_name = "default"):
 
     # disparity range tuning
     window_size = 5
@@ -46,3 +31,28 @@ if __name__ == '__main__':
     
     plt.imshow(disparity, 'gray')
     plt.savefig(os.path.join(result_dir, result_name))
+
+
+if __name__ == '__main__':
+
+    if not os.path.exists(result_dir):
+        os.mkdir(result_dir)
+    
+    
+    imgL_path = "triclopsi2l.jpg"
+    imgR_path = "triclopsi2r.jpg"
+    result_name = "SGBM_triclopsi2.png"
+    
+    imgL = cv2.imread(imgL_path)
+    imgR = cv2.imread(imgR_path)
+
+    SGBM(imgL, imgR, result_name)
+    
+    imgL_path = "corridorl.jpg"
+    imgR_path = "corridorr.jpg"
+    result_name = "SGBM_corridor.png"
+    
+    imgL = cv2.imread(imgL_path)
+    imgR = cv2.imread(imgR_path)
+
+    SGBM(imgL, imgR, result_name)

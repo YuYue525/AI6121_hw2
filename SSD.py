@@ -6,7 +6,7 @@ from PIL import Image
 
 result_dir = "./results"
 
-def sum_of_squares_difference(left_img, right_img, kernel = 12, max_offset = 20, img_name = "default"):
+def SSD(left_img, right_img, kernel = 12, max_offset = 20, img_name = "default"):
     # Load in both images, assumed to be RGBA 8bit per channel images
     left_img = Image.open(left_img).convert('L')
     left = np.asarray(left_img)
@@ -68,15 +68,15 @@ if __name__ == '__main__':
     if not os.path.exists(result_dir):
         os.mkdir(result_dir)
     
-    sum_of_squares_difference("triclopsi2l.jpg", "triclopsi2r.jpg", 6, 20, "triclopsi2")
-    sum_of_squares_difference("triclopsi2l.jpg", "triclopsi2r.jpg", 8, 20, "triclopsi2")
-    sum_of_squares_difference("triclopsi2l.jpg", "triclopsi2r.jpg", 12, 10, "triclopsi2")
-    sum_of_squares_difference("triclopsi2l.jpg", "triclopsi2r.jpg", 12, 20, "triclopsi2")
-    sum_of_squares_difference("triclopsi2l.jpg", "triclopsi2r.jpg", 12, 30, "triclopsi2")
+    SSD("triclopsi2l.jpg", "triclopsi2r.jpg", 6, 20, "triclopsi2")
+    SSD("triclopsi2l.jpg", "triclopsi2r.jpg", 8, 20, "triclopsi2")
+    SSD("triclopsi2l.jpg", "triclopsi2r.jpg", 12, 10, "triclopsi2")
+    SSD("triclopsi2l.jpg", "triclopsi2r.jpg", 12, 20, "triclopsi2")
+    SSD("triclopsi2l.jpg", "triclopsi2r.jpg", 12, 30, "triclopsi2")
     
-    sum_of_squares_difference("corridorl.jpg", "corridorr.jpg", 6, 20, "corridor")
-    sum_of_squares_difference("corridorl.jpg", "corridorr.jpg", 8, 20, "corridor")
-    sum_of_squares_difference("corridorl.jpg", "corridorr.jpg", 12, 10, "corridor")
-    sum_of_squares_difference("corridorl.jpg", "corridorr.jpg", 12, 20, "corridor")
-    sum_of_squares_difference("corridorl.jpg", "corridorr.jpg", 12, 30, "corridor")
+    SSD("corridorl.jpg", "corridorr.jpg", 6, 20, "corridor")
+    SSD("corridorl.jpg", "corridorr.jpg", 8, 20, "corridor")
+    SSD("corridorl.jpg", "corridorr.jpg", 12, 10, "corridor")
+    SSD("corridorl.jpg", "corridorr.jpg", 12, 20, "corridor")
+    SSD("corridorl.jpg", "corridorr.jpg", 12, 30, "corridor")
 
